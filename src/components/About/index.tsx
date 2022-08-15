@@ -4,6 +4,8 @@ import {
   IdcardOutlined,
   ScheduleOutlined,
   MailOutlined,
+  AimOutlined,
+  PhoneOutlined,
 } from '@ant-design/icons';
 import * as S from './styled';
 
@@ -38,6 +40,24 @@ const About = () => {
               avatar={<MailOutlined style={{ fontSize: '25px' }} />}
               title="이메일"
               description="dongsscc@gmail.com"
+            />
+          </Card>
+        </Col>
+        <Col xs={24} md={8}>
+          <Card>
+            <Meta
+              avatar={<AimOutlined style={{ fontSize: '25px' }} />}
+              title="주소지"
+              description="서울특별시 관악구"
+            />
+          </Card>
+        </Col>
+        <Col xs={24} md={8}>
+          <Card>
+            <Meta
+              avatar={<PhoneOutlined style={{ fontSize: '25px' }} />}
+              title="연락처"
+              description="010-4135-9892"
             />
           </Card>
         </Col>

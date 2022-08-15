@@ -7,7 +7,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
         </Routes>
