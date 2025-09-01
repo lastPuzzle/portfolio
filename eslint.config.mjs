@@ -12,7 +12,7 @@ const compat = new FlatCompat({
 const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   ...compat.extends("eslint-config-prettier"),
-  ...compat.extends("plugin:prettier/recommended"),
+  ...compat.extends("plugin:prettier/recommended"), 
   {
     rules: {
       "react/react-in-jsx-scope": "off",
