@@ -7,7 +7,7 @@ import {
   DropdownMenu,
   DropdownMenuItem,
   DropdownMenuSeparator,
-} from '../ui/dropdown-menu';
+} from '../../ui/dropdown-menu';
 
 export function Topbar() {
   const { theme, toggleTheme } = useTheme();
