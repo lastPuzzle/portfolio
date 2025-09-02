@@ -1,47 +1,25 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Sidebar } from './index';
+import Layout from '../layout';
 
 const meta = {
-  title: 'Layout/Sidebar',
-  component: Sidebar,
+  title: 'Layout/Layout',
+  component: Layout,
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      default: 'light',
-      values: [
-        { name: 'light', value: '#f9fafb' },
-        { name: 'dark', value: '#111827' },
-      ],
+    docs: {
+      story: {
+        iframeHeight: 600,
+      },
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof Layout>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  parameters: {
-    backgrounds: { default: 'light' },
+  args: {
+    children: null,
   },
-  decorators: [
-    (Story) => (
-      <div className="light">
-        <Story />
-      </div>
-    ),
-  ],
-};
-
-export const DarkMode: Story = {
-  parameters: {
-    backgrounds: { default: 'dark' },
-  },
-  decorators: [
-    (Story) => (
-      <div className="dark">
-        <Story />
-      </div>
-    ),
-  ],
 };
