@@ -29,7 +29,6 @@ button {
   user-select: none;
 }
 
-/* 폰트 클래스 */
 .font-geist-sans {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }

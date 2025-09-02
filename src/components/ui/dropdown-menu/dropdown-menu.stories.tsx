@@ -74,7 +74,6 @@ export const CustomTrigger: Story = {
   },
 };
 
-// 테마 토글 드롭다운
 export const ThemeToggle: Story = {
   args: {
     children: (
