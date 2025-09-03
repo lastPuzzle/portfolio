@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HangulMotion } from 'react-hangul-motion';
 import { Button } from '@/components/ui/button';
 import { Github, Download } from 'lucide-react';
@@ -24,6 +24,12 @@ export default function Intro() {
   const handleMotionComplete = () => {
     setIntroCompleted(true);
   };
+
+  useEffect(() => {
+    return () => {
+      setIntroCompleted(false);
+    };
+  }, []);
 
   return (
     <div className="flex flex-col space-y-4">

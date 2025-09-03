@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Globe, Zap, Code } from 'lucide-react';
 import { useAnimationStore } from '../../_lib/useAnimationStore';
+import { getCookie } from '@/lib/utils';
 
 interface QualificationItem {
   title: string;
@@ -107,20 +108,21 @@ const companyQualifications: CompanyQualifications[] = [
 ];
 
 export default function Qualifications() {
-  const searchParams = useSearchParams();
-  const companyId = searchParams.get('c');
   const [selectedCompany, setSelectedCompany] =
     useState<CompanyQualifications | null>(null);
   const introCompleted = useAnimationStore((state) => state.introCompleted);
 
   useEffect(() => {
-    if (companyId) {
-      const company = companyQualifications.find((c) => c.id === companyId);
-      setSelectedCompany(company || null);
+    const companyCookie = getCookie('company');
+    if (companyCookie) {
+      const company = companyQualifications.find((c) => c.id === companyCookie);
+      if (company) {
+        setSelectedCompany(company);
+      }
     } else {
       setSelectedCompany(null);
     }
-  }, [companyId]);
+  }, []);
 
   if (selectedCompany && introCompleted) {
     return (

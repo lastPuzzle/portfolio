@@ -48,6 +48,18 @@ export default async function RootLayout({
                   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
                   document.cookie = name + '=' + value + '; expires=' + expires.toUTCString() + '; path=/; SameSite=Lax';
                 }
+                
+                function handleCampaignParam() {
+                  const urlParams = new URLSearchParams(window.location.search);
+                  const campaignValue = urlParams.get('c');
+                  if (campaignValue) {
+                    setCookie('company', campaignValue, 365);
+                  }
+                }
+                
+  
+                handleCampaignParam();
+                
                 const savedTheme = getCookie('theme');
                 if (savedTheme === 'dark' || savedTheme === 'light') {
                   document.documentElement.classList.remove('light', 'dark');
