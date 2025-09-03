@@ -1,8 +1,13 @@
 'use client';
 
-import { Menu, Moon, Sun, Type } from 'lucide-react';
-import { useTheme } from '@/lib/contexts/theme';
-import { useFont, FONT_LABELS, type FontFamily } from '@/lib/contexts/font';
+import { Menu, Moon, Sun, Type, Monitor } from 'lucide-react';
+import { useTheme, useFont, useLayout } from '@/lib/contexts';
+import {
+  FONT_LABELS,
+  LAYOUT_WIDTH_LABELS,
+  type FontFamily,
+  type LayoutWidth,
+} from '@/types/settings';
 import {
   DropdownMenu,
   DropdownMenuItem,
@@ -16,9 +21,14 @@ interface TopbarProps {
 export function Topbar({ onMenuClick }: TopbarProps) {
   const { theme, toggleTheme } = useTheme();
   const { font, setFont } = useFont();
+  const { width, setWidth } = useLayout();
 
   const handleFontChange = (newFont: FontFamily) => {
     setFont(newFont);
+  };
+
+  const handleWidthChange = (newWidth: LayoutWidth) => {
+    setWidth(newWidth);
   };
 
   return (
@@ -64,6 +74,29 @@ export function Topbar({ onMenuClick }: TopbarProps) {
                 <Type className="h-3 w-3" />
                 <span>{label}</span>
                 {font === fontKey && (
+                  <div className="ml-auto h-2 w-2 rounded-full bg-blue-600" />
+                )}
+              </div>
+            </DropdownMenuItem>
+          ))}
+
+          <DropdownMenuSeparator />
+
+          <div className="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-gray-400">
+            레이아웃 너비
+          </div>
+          {Object.entries(LAYOUT_WIDTH_LABELS).map(([widthKey, label]) => (
+            <DropdownMenuItem
+              key={widthKey}
+              onClick={() => handleWidthChange(widthKey as LayoutWidth)}
+              className={
+                width === widthKey ? 'bg-gray-100 dark:bg-gray-700' : ''
+              }
+            >
+              <div className="flex items-center space-x-3">
+                <Monitor className="h-3 w-3" />
+                <span>{label}</span>
+                {width === widthKey && (
                   <div className="ml-auto h-2 w-2 rounded-full bg-blue-600" />
                 )}
               </div>

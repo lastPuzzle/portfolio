@@ -1,2 +1,7 @@
-export { ThemeProvider, useTheme } from './theme';
-export { FontProvider, useFont, FONT_LABELS, type FontFamily } from './font';
+export {
+  SettingsProvider,
+  useSettings,
+  useTheme,
+  useFont,
+  useLayout,
+} from './settings';
