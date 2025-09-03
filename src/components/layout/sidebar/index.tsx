@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { MENU_ITEMS } from '@/lib/constants/routes';
 
 interface SidebarProps {
@@ -9,6 +10,8 @@ interface SidebarProps {
 }
 
 export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
+  const pathname = usePathname();
+
   return (
     <>
       <div
@@ -65,19 +68,39 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
         </div>
 
         <nav className="p-2">
-          {MENU_ITEMS.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="group flex items-center space-x-3 rounded-lg px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
-              onClick={onClose}
-            >
-              <item.icon className="h-4 w-4 text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300" />
-              <span className="text-sm text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white">
-                {item.label}
-              </span>
-            </Link>
-          ))}
+          {MENU_ITEMS.map((item) => {
+            const isActive = pathname === item.href;
+
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className={`group flex items-center space-x-3 rounded-lg px-3 py-2 transition-colors duration-200 ${
+                  isActive
+                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-300'
+                    : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+                onClick={onClose}
+              >
+                <item.icon
+                  className={`h-4 w-4 transition-colors duration-200 ${
+                    isActive
+                      ? 'text-blue-600 dark:text-blue-400'
+                      : 'text-gray-500 group-hover:text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300'
+                  }`}
+                />
+                <span
+                  className={`text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'text-blue-700 dark:text-blue-300'
+                      : 'text-gray-700 group-hover:text-gray-900 dark:text-gray-300 dark:group-hover:text-white'
+                  }`}
+                >
+                  {item.label}
+                </span>
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </>
