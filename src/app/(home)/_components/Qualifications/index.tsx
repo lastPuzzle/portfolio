@@ -2,19 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
-import {
-  CheckCircle,
-  TrendingUp,
-  Users,
-  Target,
-  Building2,
-  Globe,
-  Zap,
-  Shield,
-  Code,
-  BarChart3,
-  Search,
-} from 'lucide-react';
+import { Globe, Zap, Code } from 'lucide-react';
 import { useAnimationStore } from '../../_lib/useAnimationStore';
 
 interface QualificationItem {
@@ -40,36 +28,6 @@ interface CompanyQualifications {
   };
   qualifications: QualificationItem[];
 }
-
-const getLevelColor = (level: string) => {
-  switch (level) {
-    case 'expert':
-      return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
-    case 'advanced':
-      return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
-    case 'intermediate':
-      return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
-    case 'beginner':
-      return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
-    default:
-      return 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
-  }
-};
-
-const getLevelText = (level: string) => {
-  switch (level) {
-    case 'expert':
-      return '전문가';
-    case 'advanced':
-      return '고급';
-    case 'intermediate':
-      return '중급';
-    case 'beginner':
-      return '초급';
-    default:
-      return '미정';
-  }
-};
 
 const getCategoryColor = (category: string) => {
   switch (category) {
@@ -146,141 +104,6 @@ const companyQualifications: CompanyQualifications[] = [
       },
     ],
   },
-  {
-    id: 'doeus',
-    name: '두어스',
-    logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
-      alt: '두어스 로고',
-      width: 28,
-      height: 28,
-    },
-    qualifications: [
-      {
-        title: '3년 이상의 프론트엔드 개발 경력을 보유하신 분',
-        description: '8년차 프론트엔드 개발자',
-        icon: <Target className="h-6 w-6 text-indigo-500" />,
-        category: 'skills',
-        level: 'advanced',
-      },
-      {
-        title:
-          '높은 업무강도의 환경에서 빠른 성장과 높은 목표를 성취하기 위해서 책임감과 실행력을 갖고 계신 분',
-        description:
-          '높은 업무강도의 환경에서 빠른 성장과 높은 목표를 성취하기 위해서 책임감과 실행력을 갖고 계신 분',
-        icon: <BarChart3 className="h-6 w-6 text-orange-500" />,
-        category: 'experience',
-        level: 'intermediate',
-      },
-      {
-        title: 'Next.js & SSR 경험',
-        description: 'AI를 통한 생산성 향상과 학습에 높은 관심을 가지신 분',
-        icon: <TrendingUp className="h-6 w-6 text-blue-500" />,
-        category: 'skills',
-        level: 'expert',
-      },
-    ],
-  },
-  {
-    id: 'toss',
-    name: '토스',
-    logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
-      alt: '토스 로고',
-      width: 28,
-      height: 28,
-    },
-    qualifications: [
-      {
-        title: '핀테크 보안 설계',
-        description:
-          '금융 서비스에 필요한 보안 요구사항을 충족하는 시스템 설계',
-        icon: <Shield className="h-6 w-6 text-red-500" />,
-        category: 'experience',
-        level: 'advanced',
-      },
-      {
-        title: '고성능 웹 애플리케이션',
-        description: '대용량 트래픽을 처리하는 고성능 프론트엔드 개발',
-        icon: <Zap className="h-6 w-6 text-yellow-500" />,
-        category: 'skills',
-        level: 'expert',
-      },
-      {
-        title: '접근성 및 사용성',
-        description: '모든 사용자를 위한 접근성과 사용성 개선',
-        icon: <Users className="h-6 w-6 text-green-500" />,
-        category: 'experience',
-        level: 'advanced',
-      },
-    ],
-  },
-  {
-    id: 'coupang',
-    name: '쿠팡',
-    logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
-      alt: '쿠팡 로고',
-      width: 28,
-      height: 28,
-    },
-    qualifications: [
-      {
-        title: '대규모 이커머스 시스템',
-        description: '수백만 사용자를 지원하는 이커머스 플랫폼 개발',
-        icon: <Building2 className="h-6 w-6 text-orange-500" />,
-        category: 'experience',
-        level: 'expert',
-      },
-      {
-        title: '마이크로프론트엔드',
-        description: '마이크로프론트엔드 아키텍처를 활용한 대규모 시스템 개발',
-        icon: <Code className="h-6 w-6 text-blue-500" />,
-        category: 'skills',
-        level: 'advanced',
-      },
-      {
-        title: 'A/B 테스트 및 최적화',
-        description: '사용자 경험 개선을 위한 A/B 테스트 및 성능 최적화',
-        icon: <BarChart3 className="h-6 w-6 text-purple-500" />,
-        category: 'experience',
-        level: 'intermediate',
-      },
-    ],
-  },
-  {
-    id: 'naver',
-    name: '네이버',
-    logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
-      alt: '네이버 로고',
-      width: 28,
-      height: 28,
-    },
-    qualifications: [
-      {
-        title: '검색 엔진 프론트엔드',
-        description: '대용량 검색 결과를 처리하는 고성능 인터페이스 개발',
-        icon: <Search className="h-6 w-6 text-green-500" />,
-        category: 'experience',
-        level: 'advanced',
-      },
-      {
-        title: '웹 표준 및 접근성',
-        description: '웹 표준을 준수하는 접근성 높은 웹 애플리케이션 개발',
-        icon: <Globe className="h-6 w-6 text-blue-500" />,
-        category: 'skills',
-        level: 'expert',
-      },
-      {
-        title: '크로스 브라우저 호환성',
-        description: '다양한 브라우저에서 일관된 사용자 경험 제공',
-        icon: <CheckCircle className="h-6 w-6 text-emerald-500" />,
-        category: 'experience',
-        level: 'advanced',
-      },
-    ],
-  },
 ];
 
 export default function Qualifications() {
@@ -349,7 +172,7 @@ export default function Qualifications() {
                 </p>
 
                 {item.experience && (
-                  <div className="mt-4 border-t border-gray-100 pt-4 pb-4 dark:border-gray-700">
+                  <div className="mt-4 border-t border-gray-100 py-4 dark:border-gray-700">
                     <h4 className="mb-2 text-sm font-medium text-gray-900 dark:text-white">
                       {item.experience.title}
                     </h4>
