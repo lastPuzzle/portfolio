@@ -1,6 +1,6 @@
 export type Theme = 'light' | 'dark';
 
-export type FontFamily = 'geist' | 'system' | 'mono';
+export type FontFamily = 'noto' | 'nanum';
 
 export type LayoutWidth = 'narrow' | 'wide';
 
@@ -11,15 +11,13 @@ export interface Settings {
 }
 
 export const FONT_LABELS: Record<FontFamily, string> = {
-  geist: 'Geist Sans',
-  system: 'System',
-  mono: 'Geist Mono',
+  noto: 'Noto Sans KR',
+  nanum: 'Nanum Gothic',
 };
 
 export const FONT_CLASSES: Record<FontFamily, string> = {
-  geist: 'font-geist-sans',
-  system: 'font-system',
-  mono: 'font-geist-mono',
+  noto: 'font-noto-sans-kr',
+  nanum: 'font-nanum-gothic',
 };
 
 export const LAYOUT_WIDTH_LABELS: Record<LayoutWidth, string> = {
@@ -34,6 +32,6 @@ export const LAYOUT_WIDTH_CLASSES: Record<LayoutWidth, string> = {
 
 export const DEFAULT_SETTINGS: Settings = {
   theme: 'light',
-  font: 'geist',
+  font: 'noto',
   width: 'narrow',
 };

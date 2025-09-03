@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 import { SettingsProvider } from '@/lib/contexts';
 import { cookies } from 'next/headers';
@@ -8,14 +8,10 @@ if (typeof window !== 'undefined') {
   import('@/lib/dev/msw');
 }
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const notoSansKR = Noto_Sans_KR({
   subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -32,12 +28,6 @@ export default async function RootLayout({
   const savedTheme = cookieStore.get('theme')?.value;
   const initialTheme =
     savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light';
-
-  const savedFont = cookieStore.get('font')?.value;
-  const initialFont =
-    savedFont === 'geist' || savedFont === 'system' || savedFont === 'mono'
-      ? savedFont
-      : 'geist';
 
   return (
     <html lang="ko" className={initialTheme}>
@@ -73,13 +63,10 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${notoSansKR.className} antialiased`}>
         <SettingsProvider
           initialSettings={{
             theme: initialTheme,
-            font: initialFont,
           }}
         >
           {children}

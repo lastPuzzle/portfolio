@@ -5,9 +5,7 @@ import { setCookie } from '../utils/cookies';
 import {
   Settings,
   DEFAULT_SETTINGS,
-  FONT_CLASSES,
   type Theme,
-  type FontFamily,
   type LayoutWidth,
 } from '@/types/settings';
 
@@ -15,7 +13,6 @@ interface SettingsContextType {
   settings: Settings;
   updateTheme: (theme: Theme) => void;
   toggleTheme: () => void;
-  updateFont: (font: FontFamily) => void;
   updateWidth: (width: LayoutWidth) => void;
 }
 
@@ -27,14 +24,6 @@ function applyTheme(theme: Theme) {
   const html = document.documentElement;
   html.classList.remove('light', 'dark');
   html.classList.add(theme);
-}
-
-function applyFont(font: FontFamily) {
-  const html = document.documentElement;
-  Object.values(FONT_CLASSES).forEach((className) => {
-    html.classList.remove(className);
-  });
-  html.classList.add(FONT_CLASSES[font]);
 }
 
 interface SettingsProviderProps {
@@ -64,9 +53,7 @@ export function SettingsProvider({
   useEffect(() => {
     if (mounted) {
       applyTheme(settings.theme);
-      applyFont(settings.font);
       setCookie('theme', settings.theme);
-      setCookie('font', settings.font);
       localStorage.setItem('portfolio-layout-width', settings.width);
     }
   }, [settings, mounted]);
@@ -82,10 +69,6 @@ export function SettingsProvider({
     }));
   };
 
-  const updateFont = (font: FontFamily) => {
-    setSettings((prev) => ({ ...prev, font }));
-  };
-
   const updateWidth = (width: LayoutWidth) => {
     setSettings((prev) => ({ ...prev, width }));
   };
@@ -96,7 +79,6 @@ export function SettingsProvider({
         settings,
         updateTheme,
         toggleTheme,
-        updateFont,
         updateWidth,
       }}
     >
@@ -122,13 +104,7 @@ export function useTheme() {
   };
 }
 
-export function useFont() {
-  const { settings, updateFont } = useSettings();
-  return {
-    font: settings.font,
-    setFont: updateFont,
-  };
-}
+// useFont 제거됨 - 폰트는 고정
 
 export function useLayout() {
   const { settings, updateWidth } = useSettings();

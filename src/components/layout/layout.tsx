@@ -28,7 +28,9 @@ export default function Layout({ children }: LayoutProps) {
       <div className="flex flex-1 flex-col">
         <Topbar onMenuClick={handleMenuClick} />
         <main className="flex-1 overflow-auto">
-          <div className={`mx-auto ${LAYOUT_WIDTH_CLASSES[width]} px-8 py-8`}>
+          <div
+            className={`mx-auto px-4 py-8 sm:px-6 lg:px-8 ${LAYOUT_WIDTH_CLASSES[width]}`}
+          >
             {children}
           </div>
         </main>

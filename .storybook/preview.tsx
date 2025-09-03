@@ -1,8 +1,7 @@
 import type { Preview } from '@storybook/nextjs-vite';
 import React from 'react';
 import { withThemeByClassName } from '@storybook/addon-themes';
-import { ThemeProvider } from '../src/lib/contexts/theme';
-import { FontProvider } from '../src/lib/contexts/font';
+import { SettingsProvider } from '../src/lib/contexts/settings';
 import '../src/app/globals.css';
 
 const StorybookProviders = ({ children }: { children: React.ReactNode }) => {
@@ -27,9 +26,9 @@ const StorybookProviders = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <ThemeProvider key={theme} initialTheme={theme}>
-      <FontProvider initialFont="geist">{children}</FontProvider>
-    </ThemeProvider>
+    <SettingsProvider initialSettings={{ theme: theme }}>
+      {children}
+    </SettingsProvider>
   );
 };
 
@@ -47,25 +46,23 @@ const preview: Preview = {
     },
 
     backgrounds: {
-      disable: true, // themes 애드온을 사용하므로 기본 backgrounds 비활성화
+      disable: true,
     },
   },
 
   decorators: [
-    // Providers 먼저 적용
     (Story) => (
       <StorybookProviders>
         <Story />
       </StorybookProviders>
     ),
-    // 그 다음 themes 애드온 적용
     withThemeByClassName({
       themes: {
         light: 'light',
         dark: 'dark',
       },
       defaultTheme: 'light',
-      parentSelector: 'html', // html 요소에 클래스 적용
+      parentSelector: 'html',
     }),
   ],
 };

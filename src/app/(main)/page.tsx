@@ -1,5 +1,6 @@
 import Layout from '@/components/layout/layout';
 import Intro from './_components/Intro';
+import Qualifications from './_components/Qualifications';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -19,9 +20,8 @@ export default function Home() {
   return (
     <Layout>
       <div className="space-y-8">
-        <div className="space-y-4">
-          <Intro />
-        </div>
+        <Intro />
+        <Qualifications />
       </div>
     </Layout>
   );
