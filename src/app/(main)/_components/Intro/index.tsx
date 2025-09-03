@@ -4,9 +4,13 @@ import React from 'react';
 import { HangulMotion } from 'react-hangul-motion';
 import { Button } from '@/components/ui/button';
 import { Github, Download } from 'lucide-react';
+import { useAnimationStore } from '../../_lib/useAnimationStore';
 
 export default function Intro() {
-  const [showButtons, setShowButtons] = React.useState(false);
+  const introCompleted = useAnimationStore((state) => state.introCompleted);
+  const setIntroCompleted = useAnimationStore(
+    (state) => state.setIntroCompleted
+  );
 
   const handleDownloadResume = () => {
     const link = document.createElement('a');
@@ -18,7 +22,7 @@ export default function Intro() {
   };
 
   const handleMotionComplete = () => {
-    setShowButtons(true);
+    setIntroCompleted(true);
   };
 
   return (
@@ -29,7 +33,7 @@ export default function Intro() {
         speed={15}
         onComplete={handleMotionComplete}
       />
-      {showButtons && (
+      {introCompleted && (
         <div className="animate-fade-in flex flex-col space-y-4">
           <p className="text-sm">
             8년의 경험으로 레거시 시스템 현대화, 트래픽 성능 최적화 등 복잡한

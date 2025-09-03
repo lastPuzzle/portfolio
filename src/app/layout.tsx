@@ -26,12 +26,9 @@ export default async function RootLayout({
 }>) {
   const cookieStore = await cookies();
   const savedTheme = cookieStore.get('theme')?.value;
-  const savedWidth = cookieStore.get('portfolio-layout-width')?.value;
 
   const initialTheme =
     savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : 'light';
-  const initialWidth =
-    savedWidth === 'narrow' || savedWidth === 'wide' ? savedWidth : 'narrow';
 
   return (
     <html lang="ko" className={initialTheme}>
@@ -71,7 +68,6 @@ export default async function RootLayout({
         <SettingsProvider
           initialSettings={{
             theme: initialTheme,
-            width: initialWidth,
           }}
         >
           {children}
