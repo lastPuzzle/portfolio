@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { setCookie } from '../utils/cookies';
+import { setCookie, getCookie } from '../utils/cookies';
 import {
   Settings,
   DEFAULT_SETTINGS,
@@ -44,17 +44,26 @@ export function SettingsProvider({
   useEffect(() => {
     setMounted(true);
 
-    const savedWidth = localStorage.getItem('portfolio-layout-width');
-    if (savedWidth && ['narrow', 'wide'].includes(savedWidth)) {
-      setSettings((prev) => ({ ...prev, width: savedWidth as LayoutWidth }));
+    if (!initialSettings.width) {
+      const savedWidth = getCookie('portfolio-layout-width');
+      if (savedWidth && ['narrow', 'wide'].includes(savedWidth)) {
+        setSettings((prev) => ({ ...prev, width: savedWidth as LayoutWidth }));
+      }
     }
-  }, []);
+
+    if (!initialSettings.theme) {
+      const savedTheme = getCookie('theme');
+      if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
+        setSettings((prev) => ({ ...prev, theme: savedTheme as Theme }));
+      }
+    }
+  }, [initialSettings.width, initialSettings.theme]);
 
   useEffect(() => {
     if (mounted) {
       applyTheme(settings.theme);
       setCookie('theme', settings.theme);
-      localStorage.setItem('portfolio-layout-width', settings.width);
+      setCookie('portfolio-layout-width', settings.width);
     }
   }, [settings, mounted]);
 
