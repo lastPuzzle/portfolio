@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
 import { Globe, Zap, Code } from 'lucide-react';
 import { useAnimationStore } from '../../_lib/useAnimationStore';
 import { getCookie } from '@/lib/utils';
@@ -59,7 +58,7 @@ const getCategoryText = (category: string) => {
 const companyQualifications: CompanyQualifications[] = [
   {
     id: 'yanolja',
-    name: '야놀자',
+    name: '샘플',
     logo: {
       src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
       alt: '야놀자 로고',

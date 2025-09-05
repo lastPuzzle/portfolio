@@ -1,4 +1,6 @@
 import Layout from '@/components/layout/layout';
+import { aboutSections } from '@/lib/data/about';
+import AboutSection from './_components/AboutSection';
 
 import type { Metadata } from 'next';
 
@@ -15,10 +17,26 @@ export const metadata: Metadata = {
     },
   ],
 };
+
 export default function About() {
   return (
     <Layout>
-      <div className="space-y-8"></div>
+      <div className="space-y-6">
+        <header className="space-y-2">
+          <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
+            소개
+          </h1>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            프론트엔드 개발자 이승혁의 이야기
+          </p>
+        </header>
+
+        <div className="space-y-6">
+          {aboutSections.map((section) => (
+            <AboutSection key={section.id} section={section} />
+          ))}
+        </div>
+      </div>
     </Layout>
   );
 }

@@ -12,30 +12,16 @@ export default function Intro() {
     (state) => state.setIntroCompleted
   );
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.download = '이승혁_경력기술서.pdf';
-    link.href = '/resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   const handleMotionComplete = () => {
     setIntroCompleted(true);
   };
-
-  useEffect(() => {
-    return () => {
-      setIntroCompleted(false);
-    };
-  }, [setIntroCompleted]);
 
   return (
     <div className="flex flex-col space-y-4">
       <HangulMotion
         text="사용자 중심의 가치를 기술로 실현하는\n프론트엔드 개발자 이승혁입니다."
-        className="text-xl font-semibold"
+        className="text-2xl font-semibold"
+        skipAnimation={introCompleted}
         speed={15}
         onComplete={handleMotionComplete}
       />

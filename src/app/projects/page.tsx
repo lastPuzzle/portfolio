@@ -23,7 +23,7 @@ export default function Project() {
     <Layout>
       <div className="space-y-8">
         <div className="space-y-4">
-          <h1 className="text-xl font-semibold">프로젝트</h1>
+          <h1 className="text-2xl font-semibold">프로젝트</h1>
           <p className="text-sm">
             다양한 기술과 도구를 활용하여 제작한 프로젝트들을 연도별로
             확인해보세요.

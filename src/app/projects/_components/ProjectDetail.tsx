@@ -4,41 +4,11 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Project } from '@/lib/data/projects';
 import { cn } from '@/lib/utils/cn';
+import { categoryLabels, categoryColors } from '@/lib/utils';
 
 interface ProjectDetailProps {
   project: Project;
 }
-
-const categoryColors = {
-  web: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-  mobile: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-  desktop:
-    'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
-  ai: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200',
-  other: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
-};
-
-const statusColors = {
-  completed:
-    'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-  'in-progress':
-    'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-  planned: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200',
-};
-
-const categoryLabels = {
-  web: '웹',
-  mobile: '모바일',
-  desktop: '데스크톱',
-  ai: 'AI',
-  other: '기타',
-};
-
-const statusLabels = {
-  completed: '완료',
-  'in-progress': '진행중',
-  planned: '계획',
-};
 
 export default function ProjectDetail({ project }: ProjectDetailProps) {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -180,11 +150,17 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               {project.learnings.map((learning, index) => (
                 <li key={index} className="flex items-start">
                   <svg
-                    className="mt-1 mr-3 h-5 w-5 flex-shrink-0 text-blue-500"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
+                    className="mt-1 mr-3 h-5 w-5 flex-shrink-0 text-emerald-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
                   </svg>
                   <span className="text-sm text-gray-600 dark:text-gray-300">
                     {learning}
@@ -214,7 +190,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
             </div>
 
             <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-              <h3 className="mb-4 text-base font-semibold text-gray-900 dark:text-white">
+              <h3 className="mb-3 text-base font-semibold text-gray-900 dark:text-white">
                 프로젝트 정보
               </h3>
               <div className="space-y-3">
@@ -231,7 +207,7 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
                     상태
                   </span>
                   <p className="text-sm text-gray-900 dark:text-white">
-                    {statusLabels[project.status]}
+                    {project.status === 'operating' ? '운영중' : '운영종료'}
                   </p>
                 </div>
                 <div>
@@ -245,53 +221,63 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-              <h3 className="mb-4 text-base font-semibold text-gray-900 dark:text-white">
-                링크
-              </h3>
-              <div className="space-y-3">
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    <svg
-                      className="mr-2 h-4 w-4"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
+            {project.links.length > 0 && (
+              <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+                <h3 className="mb-4 text-base font-semibold text-gray-900 dark:text-white">
+                  링크
+                </h3>
+                <div className="space-y-3">
+                  {project.links.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                     >
-                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                    GitHub 저장소
-                  </a>
-                )}
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-                  >
-                    <svg
-                      className="mr-2 h-4 w-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
-                    라이브 데모
-                  </a>
-                )}
+                      {link.type === 'github' ? (
+                        <svg
+                          className="mr-2 h-4 w-4"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                      ) : link.type === 'homepage' ? (
+                        <svg
+                          className="mr-2 h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="mr-2 h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      )}
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

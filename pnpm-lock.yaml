@@ -48,8 +48,8 @@ importers:
         specifier: 19.1.0
         version: 19.1.0(react@19.1.0)
       react-hangul-motion:
-        specifier: ^0.5.6
-        version: 0.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^0.6.0
+        version: 0.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       zustand:
         specifier: ^5.0.8
         version: 5.0.8(@types/react@19.1.12)(react@19.1.0)(use-sync-external-store@1.5.0(react@19.1.0))
@@ -3428,8 +3428,8 @@ packages:
     peerDependencies:
       react: ^19.1.0
 
-  react-hangul-motion@0.5.6:
-    resolution: {integrity: sha512-YcFwqWZOTsOWSvViae0phWumqh/MKuPnk9YyH1nLsCg6Az0gvVhqseo40jIbfqzUPQ9DfHT06gJG9qEfQH0xkA==}
+  react-hangul-motion@0.6.0:
+    resolution: {integrity: sha512-2qJP8w5KaDgt5/33PIdlAs62OD95Pgqb7DgqbMeeEg34TDRcKSJOri2XctKoUaWbOXPj+3jLk42tAlC6Nn8FyQ==}
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
@@ -7521,7 +7521,7 @@ snapshots:
       react: 19.1.0
       scheduler: 0.26.0
 
-  react-hangul-motion@0.5.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-hangul-motion@0.6.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
     dependencies:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
