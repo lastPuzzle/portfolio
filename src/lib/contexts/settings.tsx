@@ -2,18 +2,12 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { setCookie, getCookie } from '../utils/cookies';
-import {
-  Settings,
-  DEFAULT_SETTINGS,
-  type Theme,
-  type LayoutWidth,
-} from '@/types/settings';
+import { Settings, DEFAULT_SETTINGS, type Theme } from '@/types/settings';
 
 interface SettingsContextType {
   settings: Settings;
   updateTheme: (theme: Theme) => void;
   toggleTheme: () => void;
-  updateWidth: (width: LayoutWidth) => void;
 }
 
 const SettingsContext = createContext<SettingsContextType | undefined>(
@@ -44,13 +38,6 @@ export function SettingsProvider({
   useEffect(() => {
     setMounted(true);
 
-    if (!initialSettings.width) {
-      const savedWidth = getCookie('portfolio-layout-width');
-      if (savedWidth && ['narrow', 'wide'].includes(savedWidth)) {
-        setSettings((prev) => ({ ...prev, width: savedWidth as LayoutWidth }));
-      }
-    }
-
     if (!initialSettings.theme) {
       const savedTheme = getCookie('theme');
       if (savedTheme && ['light', 'dark'].includes(savedTheme)) {
@@ -63,7 +50,6 @@ export function SettingsProvider({
     if (mounted) {
       applyTheme(settings.theme);
       setCookie('theme', settings.theme);
-      setCookie('portfolio-layout-width', settings.width);
     }
   }, [settings, mounted]);
 
@@ -78,17 +64,12 @@ export function SettingsProvider({
     }));
   };
 
-  const updateWidth = (width: LayoutWidth) => {
-    setSettings((prev) => ({ ...prev, width }));
-  };
-
   return (
     <SettingsContext.Provider
       value={{
         settings,
         updateTheme,
         toggleTheme,
-        updateWidth,
       }}
     >
       {children}
@@ -110,15 +91,5 @@ export function useTheme() {
     theme: settings.theme,
     setTheme: updateTheme,
     toggleTheme,
-  };
-}
-
-// useFont 제거됨 - 폰트는 고정
-
-export function useLayout() {
-  const { settings, updateWidth } = useSettings();
-  return {
-    width: settings.width,
-    setWidth: updateWidth,
   };
 }
