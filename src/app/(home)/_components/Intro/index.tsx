@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { HangulMotion } from 'react-hangul-motion';
 import { Button } from '@/components/ui/button';
 import { Github, Download } from 'lucide-react';
@@ -29,7 +29,7 @@ export default function Intro() {
     return () => {
       setIntroCompleted(false);
     };
-  }, []);
+  }, [setIntroCompleted]);
 
   return (
     <div className="flex flex-col space-y-4">
@@ -58,16 +58,6 @@ export default function Intro() {
             >
               <Github size={16} />
               GitHub
-            </Button>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleDownloadResume}
-              className="flex items-center gap-2"
-            >
-              <Download size={16} />
-              경력 기술서
             </Button>
           </div>
         </div>

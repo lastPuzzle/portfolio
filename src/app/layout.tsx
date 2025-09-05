@@ -37,12 +37,6 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                function getCookie(name) {
-                  const value = '; ' + document.cookie;
-                  const parts = value.split('; ' + name + '=');
-                  if (parts.length === 2) return parts.pop().split(';').shift();
-                  return null;
-                }
                 function setCookie(name, value, days = 365) {
                   const expires = new Date();
                   expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
@@ -56,21 +50,8 @@ export default async function RootLayout({
                     setCookie('company', campaignValue, 365);
                   }
                 }
-                
-  
+                  
                 handleCampaignParam();
-                
-                const savedTheme = getCookie('theme');
-                if (savedTheme === 'dark' || savedTheme === 'light') {
-                  document.documentElement.classList.remove('light', 'dark');
-                  document.documentElement.classList.add(savedTheme);
-                } else {
-                  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  const systemTheme = prefersDark ? 'dark' : 'light';
-                  document.documentElement.classList.remove('light', 'dark');
-                  document.documentElement.classList.add(systemTheme);
-                  setCookie('theme', systemTheme);
-                }
               })();
             `,
           }}

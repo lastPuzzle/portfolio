@@ -69,7 +69,9 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
 
         <nav className="p-2">
           {MENU_ITEMS.map((item) => {
-            const isActive = pathname === item.href;
+            const isActive =
+              pathname === item.href ||
+              (item.href === '/projects' && pathname.startsWith('/projects'));
 
             return (
               <Link

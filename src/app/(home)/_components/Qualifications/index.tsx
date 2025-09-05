@@ -194,7 +194,7 @@ export default function Qualifications() {
                   </span>
                 </div>
 
-                <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-blue-900/20 dark:to-purple-900/20" />
+                <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-r from-blue-50/50 to-purple-50/50 opacity-0 transition-opacity duration-300 dark:from-blue-900/20 dark:to-purple-900/20" />
               </div>
             ))}
           </div>
