@@ -104,6 +104,54 @@ const companyQualifications: CompanyQualifications[] = [
       },
     ],
   },
+  {
+    id: 'genieworks',
+    name: '지니웍스',
+    logo: {
+      src: 'https://static.wanted.co.kr/images/wdes/0_4.81a444fc.png',
+      alt: '야놀자 로고',
+      width: 28,
+      height: 28,
+    },
+    qualifications: [
+      {
+        title: '3년 이상의 프론트엔드 경험',
+        description: '대규모 사용자 기반 서비스의 컴포넌트 설계 및 개발',
+        icon: <Code className="h-6 w-6 text-blue-500" />,
+        category: 'skills',
+        level: 'expert',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '8년차 프론트 엔드 경험으로 팀을 리드하고 구축한 경험이 있습니다.',
+        },
+      },
+      {
+        title: '성능 최적화 경험',
+        description: 'Core Web Vitals 개선 및 사용자 경험 최적화',
+        icon: <Zap className="h-6 w-6 text-green-500" />,
+        category: 'experience',
+        level: 'advanced',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '페이지 이동이 잦은 마케팅 플랫폼에서 React Query의 캐싱 및 stale-while-revalidate 전략을 도입하여 불필요한 API 호출을 줄였습니다. 또한, 커머스 서비스의 초기 로딩 속도 개선을 위해 폰트 경량화 및 AWS S3/CloudFront 기반의 CDN을 직접 구축하여 사용자 경험을 개선했습니다.',
+        },
+      },
+      {
+        title: '모바일 퍼스트 개발',
+        description: '모바일 사용자 중심의 반응형 웹 애플리케이션 개발',
+        icon: <Globe className="h-6 w-6 text-purple-500" />,
+        category: 'experience',
+        level: 'advanced',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '모바일 사용자 비율이 80%인 야놀자 서비스에서 Progressive Web App(PWA) 기술을 적용하여 네이티브 앱과 유사한 사용자 경험을 제공했습니다. 터치 인터페이스 최적화로 모바일 전환율을 25% 향상시켰습니다.',
+        },
+      },
+    ],
+  },
 ];
 
 export default function Qualifications() {

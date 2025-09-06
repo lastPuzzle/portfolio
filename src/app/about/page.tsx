@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <Layout>
-      <div className="space-y-6">
+      <div className="mx-auto max-w-4xl space-y-6">
         <header className="space-y-2">
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-white">
             소개
