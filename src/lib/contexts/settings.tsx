@@ -44,7 +44,7 @@ export function SettingsProvider({
         setSettings((prev) => ({ ...prev, theme: savedTheme as Theme }));
       }
     }
-  }, [initialSettings.width, initialSettings.theme]);
+  }, [initialSettings.theme]);
 
   useEffect(() => {
     if (mounted) {

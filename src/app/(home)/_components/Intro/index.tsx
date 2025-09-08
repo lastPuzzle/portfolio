@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect } from 'react';
 import { HangulMotion } from 'react-hangul-motion';
 import { Button } from '@/components/ui/button';
-import { Github, Download } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { useAnimationStore } from '../../_lib/useAnimationStore';
 
 export default function Intro() {

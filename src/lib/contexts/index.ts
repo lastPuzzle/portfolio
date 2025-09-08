@@ -1,1 +1,1 @@
-export { SettingsProvider, useSettings, useTheme, useLayout } from './settings';
+export { SettingsProvider, useSettings, useTheme } from './settings';

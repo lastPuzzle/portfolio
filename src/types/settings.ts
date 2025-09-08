@@ -6,11 +6,8 @@ export type LayoutWidth = 'narrow' | 'wide';
 
 export interface Settings {
   theme: Theme;
-  font: FontFamily;
-  width: LayoutWidth;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
   theme: 'light',
-  font: 'noto',
 };
