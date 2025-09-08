@@ -37,7 +37,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'samsung-wallet-2025',
+    id: 'wallet-2025',
     title: '선물하기(상용전)',
     description: '선물하기 커머스 서비스',
     longDescription:

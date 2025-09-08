@@ -46,7 +46,7 @@ export default async function ProjectDetailPage({
   }
 
   return (
-    <Layout>
+    <Layout showBackButton={true}>
       <ProjectDetail project={project} />
     </Layout>
   );

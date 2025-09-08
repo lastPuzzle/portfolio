@@ -3,17 +3,19 @@
 import { Menu, Moon, Sun } from 'lucide-react';
 import { useTheme } from '@/lib/contexts';
 import { DropdownMenu, DropdownMenuItem } from '../../ui/dropdown-menu';
+import { BackButton } from '../../ui/back-button';
 
 interface TopbarProps {
   onMenuClick?: () => void;
+  showBackButton?: boolean;
 }
 
-export function Topbar({ onMenuClick }: TopbarProps) {
+export function Topbar({ onMenuClick, showBackButton = false }: TopbarProps) {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="flex h-14 items-center justify-between border-b border-gray-200 bg-white px-4 dark:border-gray-700 dark:bg-gray-900">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <button
           onClick={onMenuClick}
           className="cursor-pointer rounded-lg p-2 hover:bg-gray-200 lg:hidden dark:hover:bg-gray-700"
@@ -21,6 +23,7 @@ export function Topbar({ onMenuClick }: TopbarProps) {
         >
           <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
         </button>
+        {showBackButton && <BackButton />}
       </div>
 
       <div className="flex items-center space-x-4">

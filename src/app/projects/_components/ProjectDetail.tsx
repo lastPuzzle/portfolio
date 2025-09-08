@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Project } from '@/lib/data/projects';
 import { cn } from '@/lib/utils/cn';
-import { categoryLabels, categoryColors } from '@/lib/utils';
+import { categoryLabels, getCategoryVariant } from '@/lib/utils';
+import Badge from '@/components/ui/badge';
 
 interface ProjectDetailProps {
   project: Project;
@@ -19,14 +20,9 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
         <div className="lg:col-span-2">
           <div className="mb-8">
             <div className="mb-4 flex flex-wrap items-center gap-3">
-              <span
-                className={cn(
-                  'rounded-full px-2 py-1 text-xs font-medium',
-                  categoryColors[project.category]
-                )}
-              >
+              <Badge variant={getCategoryVariant(project.category)} size="sm">
                 {categoryLabels[project.category]}
-              </span>
+              </Badge>
               <span className="text-sm text-gray-500 dark:text-gray-400">
                 {project.year}.{project.month.toString().padStart(2, '0')}
               </span>
@@ -179,12 +175,14 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
               </h3>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
-                  <span
+                  <Badge
                     key={tech}
-                    className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+                    variant="outline"
+                    size="sm"
+                    className="rounded-md"
                   >
                     {tech}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             </div>

@@ -71,7 +71,7 @@ export function Sidebar({ isOpen = false, onClose }: SidebarProps) {
           {MENU_ITEMS.map((item) => {
             const isActive =
               pathname === item.href ||
-              (item.href === '/projects' && pathname.startsWith('/projects'));
+              (item.href === '/projects' && pathname?.startsWith('/projects'));
 
             return (
               <Link

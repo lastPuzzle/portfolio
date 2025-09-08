@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { Project } from '@/lib/data/projects';
 import { cn } from '@/lib/utils/cn';
-import { categoryLabels, categoryColors } from '@/lib/utils';
+import { categoryLabels, getCategoryVariant } from '@/lib/utils';
+import Badge from '@/components/ui/badge';
 
 interface ProjectCardProps {
   project: Project;
@@ -15,24 +16,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="group relative flex h-full flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600">
         <div className="mb-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span
-              className={cn(
-                'rounded-full px-3 py-1 text-xs font-medium',
-                categoryColors[project.category]
-              )}
-            >
+            <Badge variant={getCategoryVariant(project.category)} size="md">
               {categoryLabels[project.category]}
-            </span>
-            <span
-              className={cn(
-                'rounded-full px-2 py-1 text-xs font-medium',
-                project.status === 'operating'
-                  ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
-                  : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-400'
-              )}
+            </Badge>
+            <Badge
+              variant={project.status === 'operating' ? 'success' : 'default'}
+              size="sm"
             >
               {project.status === 'operating' ? '운영중' : '운영종료'}
-            </span>
+            </Badge>
           </div>
           <span className="text-sm text-gray-500 dark:text-gray-400">
             {project.year}.{project.month.toString().padStart(2, '0')}
@@ -63,17 +55,19 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
         <div className="mb-4 flex flex-wrap gap-2">
           {project.technologies.slice(0, 3).map((tech) => (
-            <span
+            <Badge
               key={tech}
-              className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-700 dark:bg-gray-700 dark:text-gray-300"
+              variant="outline"
+              size="sm"
+              className="rounded-md"
             >
               {tech}
-            </span>
+            </Badge>
           ))}
           {project.technologies.length > 3 && (
-            <span className="rounded-md bg-gray-100 px-2 py-1 text-xs text-gray-700 dark:bg-gray-700 dark:text-gray-300">
+            <Badge variant="outline" size="sm" className="rounded-md">
               +{project.technologies.length - 3}
-            </span>
+            </Badge>
           )}
         </div>
 

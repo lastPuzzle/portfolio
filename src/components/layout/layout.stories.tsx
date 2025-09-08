@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Sidebar } from './index';
+import Layout from './layout';
 
 const meta = {
-  title: 'Layout/Sidebar',
-  component: Sidebar,
+  title: 'Layout/Layout',
+  component: Layout,
   parameters: {
     layout: 'fullscreen',
     docs: {
@@ -18,21 +18,14 @@ const meta = {
     },
   },
   tags: ['autodocs'],
-} satisfies Meta<typeof Sidebar>;
+} satisfies Meta<typeof Layout>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    isOpen: true,
-    onClose: () => {},
-  },
-};
-
-export const Closed: Story = {
-  args: {
-    isOpen: false,
-    onClose: () => {},
+    children: <div className="space-y-6"></div>,
+    showBackButton: false,
   },
 };
