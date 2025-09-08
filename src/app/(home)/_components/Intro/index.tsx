@@ -4,6 +4,7 @@ import { HangulMotion } from 'react-hangul-motion';
 import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import { useAnimationStore } from '../../_lib/useAnimationStore';
+import Image from 'next/image';
 
 export default function Intro() {
   const introCompleted = useAnimationStore((state) => state.introCompleted);
@@ -43,6 +44,22 @@ export default function Intro() {
             >
               <Github size={16} />
               GitHub
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() =>
+                window.open('https://story.lastpuzzle.site', '_blank')
+              }
+              className="flex items-center gap-2"
+            >
+              <Image
+                src="/storybook.svg"
+                alt="Storybook"
+                width={16}
+                height={16}
+              />
+              Storybook
             </Button>
           </div>
         </div>
