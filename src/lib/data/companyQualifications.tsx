@@ -11,6 +11,10 @@ import {
   FileText,
   Layers,
   Settings,
+  Briefcase,
+  Shuffle,
+  Star,
+  Cpu,
 } from 'lucide-react';
 
 export interface QualificationItem {
@@ -268,6 +272,116 @@ export const companyQualifications: CompanyQualifications[] = [
           title: '💡 나의 경험',
           details:
             'T-map 이벤트 페이지에서 디바운싱을 적용하여 중복 API 호출을 방지했고, 커머스 서비스의 진입 속도 개선을 위해 폰트 경량화 및 CDN을 구축했습니다. 또한 React Query의 캐싱 전략을 활용하여 불필요한 API 재호출을 줄이는 등 다양한 성능 최적화 경험을 보유하고 있습니다.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'mathpresso',
+    name: '이승혁',
+    logo: {
+      src: 'https://static.wanted.co.kr/images/wdes/0_5.0ad64c7d.png',
+      alt: '매스프레소 로고',
+      width: 32,
+      height: 32,
+    },
+    qualifications: [
+      {
+        title: 'Frontend Developer 관련 경력 3년 이상',
+        description: '자격요건: 3년 이상의 프론트엔드 개발 경력',
+        icon: <Briefcase className="h-6 w-6 text-gray-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 3년 이상의 경력을 훨씬 상회하는 풍부한 경험입니다.',
+        },
+      },
+      {
+        title: 'HTML, CSS, JavaScript를 사용한 개발 경험이 있으신 분',
+        description: '자격요건: 웹 표준 기술 활용 능력',
+        icon: <Code className="h-6 w-6 text-blue-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '8년간 진행한 모든 프로젝트는 HTML, CSS, JavaScript를 기반으로 진행되었습니다. 특히 jQuery와 JSP 같은 레거시 환경부터 최신 프레임워크까지 다양한 환경에서 웹 표준을 준수하며 개발한 경험이 있습니다.',
+        },
+      },
+      {
+        title: 'HTTP 통신에 대한 이해가 깊으신 분',
+        description: '자격요건: HTTP 통신 및 네트워크 이해도',
+        icon: <Globe className="h-6 w-6 text-green-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '모든 프로젝트에서 RESTful API를 기반으로 백엔드와 통신했습니다. 특히 React Query를 활용한 캐싱 전략, 디바운싱을 통한 중복 API 호출 방지 등 HTTP 통신을 최적화하여 서비스 성능을 개선한 경험이 풍부합니다.',
+        },
+      },
+      {
+        title:
+          'Vue, React, Angular 등의 프론트엔드 프레임워크를 사용한 개발 경험이 있으신 분',
+        description: '자격요건: 모던 프론트엔드 프레임워크 경험',
+        icon: <Layers className="h-6 w-6 text-purple-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'React와 Next.js를 주력 기술 스택으로 사용하여 다수의 커머스 및 마케팅 플랫폼을 성공적으로 개발하고 운영했습니다. 레거시 jQuery 프로젝트에 React를 직접 도입하여 재사용성과 유지보수성을 크게 개선한 경험도 있습니다.',
+        },
+      },
+      {
+        title: '서버와 클라이언트 간 RESTful API 기반의 개발 경험이 있으신 분',
+        description: '자격요건: API 기반 협업 및 개발 경험',
+        icon: <Shuffle className="h-6 w-6 text-orange-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'MSW를 도입하여 백엔드 API가 준비되지 않은 상황에서도 안정적인 프론트엔드 개발을 진행했으며, Swagger를 통해 백엔드 개발자와 효율적으로 API 명세를 협의하고 관리한 경험이 있습니다.',
+        },
+      },
+      {
+        title: 'React, TypeScript 개발 경험이 있으신 분',
+        description: '우대사항: React 및 TypeScript 숙련도',
+        icon: <Star className="h-6 w-6 text-yellow-500" />,
+        category: 'skills',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'React와 TypeScript는 저의 핵심 기술 스택입니다. 최근 5년 이상 진행한 모든 프로젝트(선물하기, 몰파이 등)에서 TypeScript를 적용하여 코드의 안정성과 예측 가능성을 높이며 대규모 애플리케이션을 성공적으로 개발했습니다.',
+        },
+      },
+      {
+        title: '새로운 기술에 대한 학습을 선호하고 호기심이 많으신 분',
+        description: '우대사항: 학습 의지 및 기술 도입 능력',
+        icon: <Lightbulb className="h-6 w-6 text-yellow-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '모노레포(TurboRepo), MSW, Zustand 등 새로운 기술을 꾸준히 학습하고 실제 프로젝트에 성공적으로 도입하여 개발 효율성을 높인 경험이 있습니다. 현재 광운대학교에 재학하며 배움을 이어가는 것 또한 지속적인 성장을 위한 저의 의지를 보여줍니다.',
+        },
+      },
+      {
+        title:
+          '웹을 구성하는 근본적인 기술들 (HTML, CSS, JavaScript, HTTP 등)에 대한 높은 이해도를 갖추신 분',
+        description: '우대사항: 웹 핵심 기술에 대한 깊은 이해',
+        icon: <Cpu className="h-6 w-6 text-red-500" />,
+        category: 'skills',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '단순히 프레임워크를 사용하는 것을 넘어, 서비스 진입 속도 개선을 위해 폰트 경량화와 CDN을 적용하고, 디바운싱으로 API 호출을 제어하는 등 웹의 근본적인 동작 원리를 이해하고 성능을 최적화한 경험이 있습니다.',
         },
       },
     ],

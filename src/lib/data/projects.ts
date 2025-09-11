@@ -62,7 +62,7 @@ export const projects: Project[] = [
     features: [
       '유저 및 어드민 프론트엔드 설계 및 개발',
       'Toss Payments 결제 연동',
-      '삼성월렛 앱 스키마 연동',
+      '선물하기 앱 스키마 연동',
       'EC2, Nginx, PM2를 이용한 배포',
     ],
     challenges: [
