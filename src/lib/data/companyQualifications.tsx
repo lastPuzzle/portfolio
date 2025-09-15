@@ -15,6 +15,10 @@ import {
   Shuffle,
   Star,
   Cpu,
+  Server,
+  Puzzle,
+  Smartphone,
+  Database,
 } from 'lucide-react';
 
 export interface QualificationItem {
@@ -277,111 +281,151 @@ export const companyQualifications: CompanyQualifications[] = [
     ],
   },
   {
-    id: 'mathpresso',
+    id: 'KCD',
     name: '이승혁',
     logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_5.0ad64c7d.png',
-      alt: '매스프레소 로고',
+      src: 'https://static.wanted.co.kr/images/wdes/0_5.f598fd2c.jpg',
+      alt: '회사 로고',
       width: 32,
       height: 32,
     },
     qualifications: [
       {
-        title: 'Frontend Developer 관련 경력 3년 이상',
-        description: '자격요건: 3년 이상의 프론트엔드 개발 경력',
-        icon: <Briefcase className="h-6 w-6 text-gray-500" />,
-        category: 'experience',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 3년 이상의 경력을 훨씬 상회하는 풍부한 경험입니다.',
-        },
-      },
-      {
-        title: 'HTML, CSS, JavaScript를 사용한 개발 경험이 있으신 분',
-        description: '자격요건: 웹 표준 기술 활용 능력',
-        icon: <Code className="h-6 w-6 text-blue-500" />,
+        title: '웹 프론트엔드 기술 전반(HTML, CSS, JavaScript)에 대한 이해',
+        description: '지식: 웹 표준 기술에 대한 깊은 이해',
+        icon: <FileText className="h-6 w-6 text-blue-500" />,
         category: 'skills',
         level: '자격',
         experience: {
           title: '💡 나의 경험',
           details:
-            '8년간 진행한 모든 프로젝트는 HTML, CSS, JavaScript를 기반으로 진행되었습니다. 특히 jQuery와 JSP 같은 레거시 환경부터 최신 프레임워크까지 다양한 환경에서 웹 표준을 준수하며 개발한 경험이 있습니다.',
+            '8년간 진행한 모든 웹 프로젝트의 근간이 되는 기술들입니다. 레거시 환경(jQuery, JSP)부터 최신 프레임워크(React)까지 다루며 웹 표준과 동작 원리에 대한 깊은 이해를 갖추고 있습니다.',
         },
       },
       {
-        title: 'HTTP 통신에 대한 이해가 깊으신 분',
-        description: '자격요건: HTTP 통신 및 네트워크 이해도',
-        icon: <Globe className="h-6 w-6 text-green-500" />,
-        category: 'skills',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '모든 프로젝트에서 RESTful API를 기반으로 백엔드와 통신했습니다. 특히 React Query를 활용한 캐싱 전략, 디바운싱을 통한 중복 API 호출 방지 등 HTTP 통신을 최적화하여 서비스 성능을 개선한 경험이 풍부합니다.',
-        },
-      },
-      {
-        title:
-          'Vue, React, Angular 등의 프론트엔드 프레임워크를 사용한 개발 경험이 있으신 분',
-        description: '자격요건: 모던 프론트엔드 프레임워크 경험',
-        icon: <Layers className="h-6 w-6 text-purple-500" />,
-        category: 'skills',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            'React와 Next.js를 주력 기술 스택으로 사용하여 다수의 커머스 및 마케팅 플랫폼을 성공적으로 개발하고 운영했습니다. 레거시 jQuery 프로젝트에 React를 직접 도입하여 재사용성과 유지보수성을 크게 개선한 경험도 있습니다.',
-        },
-      },
-      {
-        title: '서버와 클라이언트 간 RESTful API 기반의 개발 경험이 있으신 분',
-        description: '자격요건: API 기반 협업 및 개발 경험',
-        icon: <Shuffle className="h-6 w-6 text-orange-500" />,
-        category: 'experience',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            'MSW를 도입하여 백엔드 API가 준비되지 않은 상황에서도 안정적인 프론트엔드 개발을 진행했으며, Swagger를 통해 백엔드 개발자와 효율적으로 API 명세를 협의하고 관리한 경험이 있습니다.',
-        },
-      },
-      {
-        title: 'React, TypeScript 개발 경험이 있으신 분',
-        description: '우대사항: React 및 TypeScript 숙련도',
+        title: 'React와 TypeScript의 원리와 최신 패턴에 대한 이해',
+        description: '지식: React, TypeScript 숙련도',
         icon: <Star className="h-6 w-6 text-yellow-500" />,
         category: 'skills',
-        level: '우대',
+        level: '자격',
         experience: {
           title: '💡 나의 경험',
           details:
-            'React와 TypeScript는 저의 핵심 기술 스택입니다. 최근 5년 이상 진행한 모든 프로젝트(선물하기, 몰파이 등)에서 TypeScript를 적용하여 코드의 안정성과 예측 가능성을 높이며 대규모 애플리케이션을 성공적으로 개발했습니다.',
+            'React와 TypeScript는 저의 핵심 기술 스택입니다. 최신 개발 패턴을 적극적으로 학습하고 적용하며, 다수의 프로덕션을 성공적으로 개발하고 운영해왔습니다.',
         },
       },
       {
-        title: '새로운 기술에 대한 학습을 선호하고 호기심이 많으신 분',
-        description: '우대사항: 학습 의지 및 기술 도입 능력',
-        icon: <Lightbulb className="h-6 w-6 text-yellow-500" />,
+        title: '프론트엔드 아키텍처 패턴과 상태 관리 방법론에 대한 지식',
+        description: '지식: 아키텍처 설계 및 상태 관리',
+        icon: <Settings className="h-6 w-6 text-purple-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '여러 파생 서비스의 효율적인 관리를 위해 모노레포(TurboRepo) 아키텍처를 직접 도입했습니다. 또한, 프로젝트 특성에 맞춰 TanStack Query, ,Redux-Saga, Redux-Toolkit, Zustand 등 다양한 상태 관리 라이브러리를 적용하며 최적의 솔루션을 찾아왔습니다.',
+        },
+      },
+      {
+        title: '웹 성능 최적화 원리 및 기법에 대한 이해',
+        description: '지식: 웹 성능 최적화 경험',
+        icon: <BarChart3 className="h-6 w-6 text-orange-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'T-map 이벤트에서 디바운싱을 적용하여 중복 API 호출을 방지했고, React Query 캐싱 전략으로 불필요한 데이터 요청을 최소화했습니다. 또한 폰트 경량화 및 CDN 적용으로 서비스 초기 로딩 속도를 개선하는 등 다양한 성능 최적화 경험을 보유하고 있습니다.',
+        },
+      },
+      {
+        title:
+          '프로덕션 환경에서 React + TypeScript 로 웹 프론트엔드 프로덕트를 개발/운영한 경험',
+        description: '기술: React+TypeScript 프로덕션 경험',
+        icon: <Server className="h-6 w-6 text-green-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '선물하기, 몰파이, h.point 등 다수의 서비스를 React와 TypeScript를 사용하여 성공적으로 개발하고 현재까지 운영하고 있습니다. 8년간의 경험을 통해 안정적인 프로덕션 환경 구축 및 유지보수에 익숙합니다.',
+        },
+      },
+      {
+        title:
+          '복잡한 비즈니스 로직을 정확하고 빠르게 이해하며 기술 적자를 쌓지 않는 문제 해결 능력',
+        description: '기술: 복잡한 도메인 이해 및 문제 해결',
+        icon: <Puzzle className="h-6 w-6 text-red-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '8년간 커머스 및 마케팅 플랫폼이라는 복잡한 도메인에서 개발을 수행했습니다. Toss Payments 연동, 업체별 UI/UX 커스텀, 통계 어드민 설계 등 복잡한 비즈니스 요구사항을 정확히 이해하고 확장 가능성을 고려한 코드를 작성하여 기술 부채를 최소화했습니다.',
+        },
+      },
+      {
+        title:
+          '구성원들의 의견을 존중하고, 겸손한 커뮤니케이션 능력을 가지고 팀원들의 신뢰자산을 쌓을 수 있는 분',
+        description: '태도: 협업과 커뮤니케이션',
+        icon: <Users className="h-6 w-6 text-teal-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '팀장으로서 Git-Flow 도입, AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 활성화했습니다. 이를 통해 팀원들과 함께 논의하며 더 나은 코드를 만들어가는 협업 문화를 구축했습니다.',
+        },
+      },
+      {
+        title:
+          '기획/디자인/마케팅 등 다양한 직군과 원활히 소통하며 함께 나아갈 수 있는 협업 능력을 갖춘 분',
+        description: '우대사항: 다양한 직군과의 협업 능력',
+        icon: <MessageSquare className="h-6 w-6 text-indigo-500" />,
         category: 'experience',
         level: '우대',
         experience: {
           title: '💡 나의 경험',
           details:
-            '모노레포(TurboRepo), MSW, Zustand 등 새로운 기술을 꾸준히 학습하고 실제 프로젝트에 성공적으로 도입하여 개발 효율성을 높인 경험이 있습니다. 현재 광운대학교에 재학하며 배움을 이어가는 것 또한 지속적인 성장을 위한 저의 의지를 보여줍니다.',
+            '백엔드 개발자와의 원활한 협업을 위해 MSW를 도입했으며, 디자이너/기획자와의 소통 비용 절감을 위해 Storybook을 활용하여 컴포넌트를 시각적으로 관리하고 논의를 진행했습니다.',
         },
       },
       {
         title:
-          '웹을 구성하는 근본적인 기술들 (HTML, CSS, JavaScript, HTTP 등)에 대한 높은 이해도를 갖추신 분',
-        description: '우대사항: 웹 핵심 기술에 대한 깊은 이해',
-        icon: <Cpu className="h-6 w-6 text-red-500" />,
-        category: 'skills',
+          '모바일 앱의 웹뷰로 제공되는 어플리케이션을 운영해본 경험이 있는 분',
+        description: '우대사항: 모바일 웹뷰 개발 및 운영 경험',
+        icon: <Smartphone className="h-6 w-6 text-gray-500" />,
+        category: 'experience',
         level: '우대',
         experience: {
           title: '💡 나의 경험',
           details:
-            '단순히 프레임워크를 사용하는 것을 넘어, 서비스 진입 속도 개선을 위해 폰트 경량화와 CDN을 적용하고, 디바운싱으로 API 호출을 제어하는 등 웹의 근본적인 동작 원리를 이해하고 성능을 최적화한 경험이 있습니다.',
+            '선물하기, h.point 오락실, 지니펀 등 다수의 프로젝트를 모바일 앱 내 웹뷰 환경에서 개발하고 운영했습니다. 앱 스키마 연동 경험이 풍부하여 네이티브 앱과 웹뷰 간의 상호작용을 원활하게 구현할 수 있습니다.',
+        },
+      },
+      {
+        title: '디자인 시스템 컴포넌트를 설계, 구현 및 운영해본 경험이 있는 분',
+        description: '우대사항: 디자인 시스템 구축 경험',
+        icon: <Palette className="h-6 w-6 text-pink-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '모노레포(TurboRepo) 환경에서 공통 UI 라이브러리를 구축하여 여러 파생 서비스에서 일관된 UI/UX를 제공했으며, Storybook을 통해 컴포넌트를 체계적으로 문서화하고 관리하며 디자인 시스템을 구축하고 운영한 경험이 있습니다.',
+        },
+      },
+      {
+        title:
+          'CDN, HTTP 캐시, 어플리케이션 캐시 등 여러 레이어에서의 캐싱을 깊이 고민해본 경험이 있는 분',
+        description: '우대사항: 다중 레이어 캐싱 전략 경험',
+        icon: <Database className="h-6 w-6 text-cyan-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '어플리케이션 레벨에서는 React Query의 캐싱 전략을 적극적으로 활용하여 API 호출을 최소화했으며, 인프라 레벨에서는 CloudFront CDN을 적용하여 정적 에셋의 로딩 속도를 개선하는 등 여러 레이어에서의 캐싱을 통해 성능을 최적화한 경험이 있습니다.',
         },
       },
     ],
