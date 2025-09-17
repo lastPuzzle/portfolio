@@ -19,6 +19,8 @@ import {
   Puzzle,
   Smartphone,
   Database,
+  RefreshCw,
+  TrendingUp,
 } from 'lucide-react';
 
 export interface QualificationItem {
@@ -426,6 +428,118 @@ export const companyQualifications: CompanyQualifications[] = [
           title: '💡 나의 경험',
           details:
             '어플리케이션 레벨에서는 React Query의 캐싱 전략을 적극적으로 활용하여 API 호출을 최소화했으며, 인프라 레벨에서는 CloudFront CDN을 적용하여 정적 에셋의 로딩 속도를 개선하는 등 여러 레이어에서의 캐싱을 통해 성능을 최적화한 경험이 있습니다.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'jobisandvillains',
+    name: '이승혁',
+    logo: {
+      src: 'https://static.wanted.co.kr/images/wdes/0_5.f1d37bc8.png',
+      alt: '자비스앤빌런즈 로고',
+      width: 32,
+      height: 32,
+    },
+    qualifications: [
+      {
+        title: '3년 이상의 프론트엔드 개발 경력을 보유하신 분',
+        description: '자격요건: 3년 이상의 개발 경력',
+        icon: <Briefcase className="h-6 w-6 text-gray-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 3년 이상의 경력을 훨씬 상회하는 풍부한 실무 경험입니다.',
+        },
+      },
+      {
+        title:
+          'React 기반의 SPA 개발에 능숙하고, 확장 가능한 아키텍처를 설계 및 구축해보신 분',
+        description: '자격요건: React SPA 및 확장 가능한 아키텍처 설계 경험',
+        icon: <Layers className="h-6 w-6 text-purple-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'React를 주력으로 다수의 SPA 프로젝트를 개발했습니다. 특히 여러 파생 서비스(B2C, B2B, 복지몰)의 UI 공유 및 효율화를 위해 모노레포(TurboRepo) 아키텍처를 직접 설계하고 도입하며 확장성을 크게 개선한 경험이 있습니다.',
+        },
+      },
+      {
+        title:
+          '사용자 데이터, 결제 내역 등 복잡한 비즈니스 로직을 다루는 웹 애플리케이션 개발 경험이 있으신 분',
+        description: '자격요건: 복잡한 비즈니스 로직 처리 경험',
+        icon: <Puzzle className="h-6 w-6 text-red-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '삼성월렛 선물하기 서비스에서 Toss Payments 결제 모듈을 연동했으며, 다수의 커머스 플랫폼(Mallpie, sellerd+)에서 상품, 주문, 통계 등 복잡한 비즈니스 데이터를 다루는 어드민 및 사용자 페이지를 개발한 경험이 풍부합니다.',
+        },
+      },
+      {
+        title:
+          '복잡한 비즈니스 로직과 레거시 시스템을 다루며, 비즈니스 임팩트를 고려한 리팩터링 경험이 있으신 분',
+        description: '자격요건: 레거시 시스템 리팩터링 경험',
+        icon: <RefreshCw className="h-6 w-6 text-blue-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'jQuery 기반의 레거시 마케팅 플랫폼(애드머스)에 React를 직접 도입하여 컴포넌트 기반의 재사용 가능한 구조로 리팩터링을 진행했습니다. 이를 통해 유지보수 비용을 크게 절감하고 개발 생산성을 향상시킨 경험이 있습니다.',
+        },
+      },
+      {
+        title: '기술 스택: React, Next.js, Tanstack Query, Zustand, TypeScript',
+        description: '자격요건: 핵심 기술 스택 일치',
+        icon: <Star className="h-6 w-6 text-yellow-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '언급된 모든 기술 스택은 저의 주력 기술입니다. 최근 진행한 삼성월렛, 몰파이 등 대부분의 프로젝트에서 React, Next.js, TypeScript를 기반으로 개발했으며, Tanstack Query(React Query)와 Zustand를 적극적으로 활용하여 상태 관리 및 데이터 Fetching을 효율적으로 처리했습니다.',
+        },
+      },
+      {
+        title:
+          '다양한 직군과의 빠른 협업에 익숙하고, 변화하는 요구사항에 민첩하게 대응한 경험이 있으신 분',
+        description: '자격요건: 다직군 협업 및 민첩한 대응',
+        icon: <Users className="h-6 w-6 text-green-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '백엔드 개발자와의 협업 효율을 높이기 위해 MSW를 도입하여 API 의존성을 제거했으며, 디자이너 및 기획자와의 원활한 소통을 위해 Storybook으로 컴포넌트를 시각화하여 소통 비용을 절감하는 등 빠른 협업 환경을 주도적으로 구축했습니다.',
+        },
+      },
+      {
+        title: '대규모 트래픽을 다루는 B2C 서비스 개발 경험이 있으신 분',
+        description: '우대사항: 대규모 B2C 서비스 경험',
+        icon: <TrendingUp className="h-6 w-6 text-indigo-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'T-map, h.point, CJ ONE 등 대규모 사용자를 보유한 플랫폼 내에서 이벤트, 리워드 마케팅 등 다수의 B2C 서비스를 성공적으로 개발하고 운영한 경험이 있습니다.',
+        },
+      },
+      {
+        title: '모바일 웹/앱 성능 최적화 및 웹 성능 측정 경험이 있으신 분',
+        description: '우대사항: 성능 최적화 및 측정 경험',
+        icon: <BarChart3 className="h-6 w-6 text-orange-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '폰트 경량화 및 CDN 적용으로 초기 로딩 속도를 개선하고, React Query 캐싱 및 디바운싱으로 불필요한 네트워크 요청을 최소화하는 등 사용자 경험에 직접적인 영향을 미치는 성능 지표들을 지속적으로 개선해 온 경험이 있습니다.',
         },
       },
     ],
