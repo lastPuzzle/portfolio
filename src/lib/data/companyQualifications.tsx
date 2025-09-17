@@ -477,7 +477,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '삼성월렛 선물하기 서비스에서 Toss Payments 결제 모듈을 연동했으며, 다수의 커머스 플랫폼(Mallpie, sellerd+)에서 상품, 주문, 통계 등 복잡한 비즈니스 데이터를 다루는 어드민 및 사용자 페이지를 개발한 경험이 풍부합니다.',
+            '선물하기 서비스에서 Toss Payments 결제 모듈을 연동했으며, 다수의 커머스 플랫폼(Mallpie, sellerd+)에서 상품, 주문, 통계 등 복잡한 비즈니스 데이터를 다루는 어드민 및 사용자 페이지를 개발한 경험이 풍부합니다.',
         },
       },
       {
@@ -502,7 +502,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '언급된 모든 기술 스택은 저의 주력 기술입니다. 최근 진행한 삼성월렛, 몰파이 등 대부분의 프로젝트에서 React, Next.js, TypeScript를 기반으로 개발했으며, Tanstack Query(React Query)와 Zustand를 적극적으로 활용하여 상태 관리 및 데이터 Fetching을 효율적으로 처리했습니다.',
+            '언급된 모든 기술 스택은 저의 주력 기술입니다. 최근 진행한 선물하기, 몰파이 등 대부분의 프로젝트에서 React, Next.js, TypeScript를 기반으로 개발했으며, Tanstack Query(React Query)와 Zustand를 적극적으로 활용하여 상태 관리 및 데이터 Fetching을 효율적으로 처리했습니다.',
         },
       },
       {
