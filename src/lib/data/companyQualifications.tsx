@@ -21,6 +21,7 @@ import {
   Database,
   RefreshCw,
   TrendingUp,
+  GitMerge,
 } from 'lucide-react';
 
 export interface QualificationItem {
@@ -540,6 +541,117 @@ export const companyQualifications: CompanyQualifications[] = [
           title: '💡 나의 경험',
           details:
             '폰트 경량화 및 CDN 적용으로 초기 로딩 속도를 개선하고, React Query 캐싱 및 디바운싱으로 불필요한 네트워크 요청을 최소화하는 등 사용자 경험에 직접적인 영향을 미치는 성능 지표들을 지속적으로 개선해 온 경험이 있습니다.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'joongang_ilbo',
+    name: '이승혁',
+    logo: {
+      src: 'https://static.wanted.co.kr/images/wdes/0_5.fcb55c91.jpg',
+      alt: '중앙일보 로고',
+      width: 32,
+      height: 32,
+    },
+    qualifications: [
+      {
+        title:
+          '5년 이상의 웹서비스 개발 경험 또는 그에 준하는 경험이 있으신 분',
+        description: '자격요건: 5년 이상의 개발 경력',
+        icon: <Briefcase className="h-6 w-6 text-gray-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 5년 이상의 경력을 충분히 만족하는 풍부한 실무 경험입니다.',
+        },
+      },
+      {
+        title: 'React, Vue 등 SPA 프레임워크 개발 경험이 있으신 분',
+        description: '자격요건: SPA 프레임워크 개발 경험',
+        icon: <Layers className="h-6 w-6 text-purple-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'React와 Next.js를 주력 기술 스택으로 사용하여 다수의 커머스 및 마케팅 플랫폼 SPA를 성공적으로 개발하고 운영해왔습니다.',
+        },
+      },
+      {
+        title:
+          'Redux, Recoil, MobX 등 상태관리 패턴에 대한 경험과 이해도가 있으신 분',
+        description: '자격요건: 상태 관리 라이브러리 경험',
+        icon: <Shuffle className="h-6 w-6 text-orange-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '프로젝트의 특성과 복잡도에 따라 Redux(redux-saga, redux-toolkit)와 Zustand 등 다양한 상태 관리 라이브러리를 적용한 경험이 있습니다. 이를 통해 상태 관리 패턴에 대한 깊은 이해를 갖추고 있습니다.',
+        },
+      },
+      {
+        title: 'TypeScript 및 Javascript(ES6+) 활용 경험과 이해도가 있으신 분',
+        description: '자격요건: TypeScript & Modern JavaScript',
+        icon: <Code className="h-6 w-6 text-blue-500" />,
+        category: 'skills',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '최근 5년 이상 진행한 모든 프로젝트(선물하기, 몰파이 등)에서 TypeScript를 적용하여 코드의 안정성과 예측 가능성을 높이며 대규모 애플리케이션을 성공적으로 개발했습니다.',
+        },
+      },
+      {
+        title: 'RESTful API 기반 클라이언트 개발 경험이 있으신 분',
+        description: '자격요건: RESTful API 연동 경험',
+        icon: <Globe className="h-6 w-6 text-green-500" />,
+        category: 'experience',
+        level: '자격',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '8년간의 모든 프로젝트에서 RESTful API를 기반으로 백엔드와 통신했습니다. 특히 MSW를 도입하여 API 의존성을 낮추고, Swagger를 통해 효율적으로 API 명세를 관리한 경험이 있습니다.',
+        },
+      },
+      {
+        title: 'Next.js, Remix 등 최신 SPA/SSR 프레임워크 경험이 있으신 분',
+        description: '우대사항: 최신 SSR 프레임워크 경험',
+        icon: <Star className="h-6 w-6 text-yellow-500" />,
+        category: 'skills',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            'Next.js는 저의 주력 프레임워크 중 하나입니다. CSR과 SSR의 장단점을 이해하고 있으며, 몰파이(v12)와 선물하기(v13) 프로젝트를 통해 최신 버전의 Next.js를 사용한 개발 경험이 풍부합니다.',
+        },
+      },
+      {
+        title:
+          '모노레포 환경(Turborepo, NX 등) 및 모듈 번들링(Webpack, Vite 등) 경험이 있으신 분',
+        description: '우대사항: 모노레포 구축 경험',
+        icon: <GitMerge className="h-6 w-6 text-red-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '여러 파생 서비스의 UI 공통화 및 코드 관리 효율성을 높이기 위해 직접 Turborepo를 도입하여 모노레포 환경을 성공적으로 구축하고 운영한 경험이 있습니다.',
+        },
+      },
+      {
+        title: '기획, 디자인, 운영 등 다양한 직군과의 협업 능력이 있으신 분',
+        description: '우대사항: 다직군 협업 능력',
+        icon: <Users className="h-6 w-6 text-teal-500" />,
+        category: 'experience',
+        level: '우대',
+        experience: {
+          title: '💡 나의 경험',
+          details:
+            '백엔드 개발자와의 협업을 위해 MSW를, 디자이너/기획자와의 원활한 소통을 위해 Storybook을 도입하는 등, 다양한 직군과의 소통 비용을 줄이고 협업 효율을 높이는 데 익숙합니다.',
         },
       },
     ],
