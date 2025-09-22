@@ -75,6 +75,71 @@ export default function Qualifications() {
           </div>
 
           <div className="space-y-8">
+            {/* 핵심 섹션 - 파라미터가 없을 때만 표시 */}
+            {selectedCompany.id === 'resume' &&
+              selectedCompany.qualifications.filter(
+                (item) => item.level === '핵심'
+              ).length > 0 && (
+                <div className="space-y-4">
+                  <h3 className="flex items-center text-lg font-semibold text-gray-900 dark:text-white">
+                    <Badge variant="warning" size="sm" className="mr-2">
+                      핵심
+                    </Badge>
+                    핵심 역량
+                  </h3>
+                  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {selectedCompany.qualifications
+                      .filter((item) => item.level === '핵심')
+                      .map((item, index) => (
+                        <div
+                          key={`core-${index}`}
+                          className="group relative flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-blue-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:border-blue-600"
+                        >
+                          <div className="mb-4 flex items-start justify-between">
+                            <div className="flex items-center space-x-3">
+                              <div className="rounded-lg bg-gray-50 p-2 transition-transform duration-300 group-hover:scale-110 dark:bg-gray-700">
+                                {item.icon}
+                              </div>
+                            </div>
+                            <Badge variant="warning" size="sm">
+                              핵심
+                            </Badge>
+                          </div>
+
+                          <h3 className="mb-2 text-lg font-semibold text-gray-900 transition-colors group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
+                            {item.title}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            {item.description}
+                          </p>
+
+                          {item.experience && (
+                            <div className="mt-4 border-t border-gray-100 py-4 dark:border-gray-700">
+                              <h4 className="mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                {item.experience.title}
+                              </h4>
+                              <p className="text-sm leading-relaxed whitespace-pre-line text-gray-600 dark:text-gray-300">
+                                {item.experience.details}
+                              </p>
+                            </div>
+                          )}
+
+                          <div className="mt-auto border-t border-gray-100 pt-4 dark:border-gray-700">
+                            <Badge
+                              variant={getCategoryVariant(item.category)}
+                              size="md"
+                            >
+                              {getCategoryText(item.category)}
+                            </Badge>
+                          </div>
+
+                          <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-50/50 to-orange-50/50 opacity-0 transition-opacity duration-300 dark:from-yellow-900/20 dark:to-orange-900/20" />
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              )}
+
             {selectedCompany.qualifications.filter(
               (item) => item.level === '자격'
             ).length > 0 && (
@@ -116,7 +181,7 @@ export default function Qualifications() {
                             <h4 className="mb-2 text-sm font-medium text-gray-900 dark:text-white">
                               {item.experience.title}
                             </h4>
-                            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            <p className="text-sm leading-relaxed whitespace-pre-line text-gray-600 dark:text-gray-300">
                               {item.experience.details}
                             </p>
                           </div>
@@ -193,7 +258,7 @@ export default function Qualifications() {
                             <h4 className="mb-2 text-sm font-medium text-gray-900 dark:text-white">
                               {item.experience.title}
                             </h4>
-                            <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+                            <p className="text-sm leading-relaxed whitespace-pre-line text-gray-600 dark:text-gray-300">
                               {item.experience.details}
                             </p>
                           </div>

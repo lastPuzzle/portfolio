@@ -22,6 +22,7 @@ import {
   RefreshCw,
   TrendingUp,
   GitMerge,
+  Cloud,
 } from 'lucide-react';
 
 export interface QualificationItem {
@@ -29,7 +30,7 @@ export interface QualificationItem {
   description: string;
   icon: React.ReactNode;
   category: 'experience' | 'skills' | 'achievements';
-  level?: '자격' | '우대';
+  level?: '자격' | '우대' | '핵심';
   experience?: {
     title: string;
     details: string;
@@ -49,127 +50,6 @@ export interface CompanyQualifications {
 }
 
 export const companyQualifications: CompanyQualifications[] = [
-  {
-    id: 'encar',
-    name: '이승혁',
-    logo: {
-      src: 'https://static.wanted.co.kr/images/wdes/0_5.99230970.jpg',
-      alt: '엔카 로고',
-      width: 32,
-      height: 32,
-    },
-    qualifications: [
-      {
-        title: 'Front-end 개발 경력 2년 이상, ReactJS 개발 경력 1년 이상',
-        description: '자격요건: 숙련된 프론트엔드 및 React 개발 경험',
-        icon: <Code className="h-6 w-6 text-blue-500" />,
-        category: 'experience',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '총 8년간 프론트엔드 개발자로 근무했으며, 2018년부터 다수의 프로젝트에 React를 도입하고 발전시켜온 경험이 있습니다.',
-        },
-      },
-      {
-        title: 'HTML, CSS, 웹 접근성에 대한 지식',
-        description: '자격요건: 웹 표준 및 접근성에 대한 이해',
-        icon: <FileText className="h-6 w-6 text-blue-500" />,
-        category: 'skills',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '모든 웹 프로젝트에서 시맨틱 마크업과 웹 표준을 준수하여 HTML, CSS를 작성했습니다. 이를 통해 기본적인 웹 접근성을 고려하며 개발을 진행했습니다.',
-        },
-      },
-      {
-        title: 'ES6+, ReactJS, Redux, RESTful API, Git 활용 능력',
-        description: '자격요건: 주요 기술 스택에 대한 깊은 이해',
-        icon: <Layers className="h-6 w-6 text-blue-500" />,
-        category: 'skills',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '다수 프로젝트에서 React와 Redux(redux-saga, redux-toolkit)를 사용했으며, 모든 프로젝트에서 Git-Flow 기반으로 RESTful API를 연동하여 협업했습니다.',
-        },
-      },
-      {
-        title: 'SPA 및 SSR에 대한 이해',
-        description:
-          '자격요건: Single Page Application 및 Server-Side Rendering 경험',
-        icon: <Globe className="h-6 w-6 text-blue-500" />,
-        category: 'experience',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            "Next.js(v12, v13)를 사용한 '선물하기', '몰파이' 프로젝트를 통해 SSR 환경을 직접 구축하고 운영한 경험이 있습니다.",
-        },
-      },
-      {
-        title: 'UI/UX에 대한 높은 가치 부여',
-        description: '자격요건: 사용자 중심의 UI/UX 개선 의지',
-        icon: <Palette className="h-6 w-6 text-blue-500" />,
-        category: 'experience',
-        level: '자격',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            "다양한 커머스 플랫폼에서 'UI/UX 개선 작업 수행'을 담당했으며, 사용자의 편의성을 높이기 위한 고민을 지속적으로 해왔습니다.",
-        },
-      },
-      {
-        title: '성능 최적화에 대한 이해',
-        description: '우대사항: 웹 서비스 성능 개선 경험',
-        icon: <Zap className="h-6 w-6 text-green-500" />,
-        category: 'experience',
-        level: '우대',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            'React Query 캐싱 전략 도입, 디바운싱을 통한 중복 API 호출 방지, 폰트 경량화 및 CDN 구축 등 다양한 성능 최적화 경험을 보유하고 있습니다.',
-        },
-      },
-      {
-        title: '모노레포 구조 설계 및 개발환경 개선',
-        description: '우대사항: 프로젝트 아키텍처 및 개발 효율 개선 경험',
-        icon: <Settings className="h-6 w-6 text-purple-500" />,
-        category: 'experience',
-        level: '우대',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '다수의 파생 서비스를 효율적으로 관리하기 위해 Turborepo 기반의 모노레포 아키텍처를 도입했으며, MSW를 선제적으로 도입해 개발 생산성을 향상시켰습니다.',
-        },
-      },
-      {
-        title: '웹 접근성/SEO 프로젝트 경험',
-        description: '우대사항: 검색 엔진 최적화 및 접근성 향상 경험',
-        icon: <Zap className="h-6 w-6 text-green-500" />,
-        category: 'experience',
-        level: '우대',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            'Next.js의 SSR 기능을 활용하여 SEO 친화적인 구조를 설계한 경험이 있습니다. 웹 접근성을 주 목표로 한 프로젝트는 없었으나, 개발 시 항상 시맨틱 태그 준수를 통해 기본을 지키려 노력했습니다.',
-        },
-      },
-      {
-        title: '적극적인 코드리뷰와 공유문화',
-        description: '우대사항: 함께 성장하는 개발 문화에 대한 기여',
-        icon: <Globe className="h-6 w-6 text-purple-500" />,
-        category: 'experience',
-        level: '우대',
-        experience: {
-          title: '💡 나의 경험',
-          details:
-            '팀장으로서 AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 체계화했으며, 팀원들과 함께 코드 컨벤션을 만들어가는 문화를 형성했습니다.',
-        },
-      },
-    ],
-  },
   {
     id: 'paytalab',
     name: '이승혁',
@@ -652,6 +532,90 @@ export const companyQualifications: CompanyQualifications[] = [
           title: '💡 나의 경험',
           details:
             '백엔드 개발자와의 협업을 위해 MSW를, 디자이너/기획자와의 원활한 소통을 위해 Storybook을 도입하는 등, 다양한 직군과의 소통 비용을 줄이고 협업 효율을 높이는 데 익숙합니다.',
+        },
+      },
+    ],
+  },
+  {
+    id: 'resume',
+    name: '이승혁',
+    logo: {
+      src: 'https://cdn-icons-png.flaticon.com/512/149/149071.png',
+      alt: '프로필 이미지',
+      width: 32,
+      height: 32,
+    },
+    qualifications: [
+      {
+        title: '보유 기술 스택 (Technical Skills)',
+        description: '핵심 역량: 주요 기술 및 라이브러리',
+        icon: <Cpu className="h-6 w-6 text-gray-500" />,
+        category: 'skills',
+        level: '핵심',
+        experience: {
+          title: '💡 기술 목록',
+          details:
+            '언어 및 프레임워크: TypeScript, JavaScript(ES6+), React, Next.js\n상태 관리: Zustand, React Query, Redux(Toolkit, Saga)\n스타일링: Emotion, MUI, Styled-components, SCSS \n개발 도구 및 협업: TurboRepo, MSW, Storybook, Husky, Chart.js, Swagger\n배포: AWS(EC2, S3, CloudFront), Nginx, PM2',
+        },
+      },
+      {
+        title: 'React, Next.js, TypeScript 기반 개발 전문성',
+        description: '핵심 역량: 모던 프론트엔드 기술 스택',
+        icon: <Star className="h-6 w-6 text-yellow-500" />,
+        category: 'skills',
+        level: '핵심',
+        experience: {
+          title: '💡 주요 경험',
+          details:
+            'Next.js와 TypeScript를 주력으로 사용하며, Zustand와 React Query를 활용한 효율적인 상태 관리에 능숙합니다. 특히 Zod와 React-hook-form을 연동하여 폼 상태 및 유효성 검사를 안정적으로 관리한 경험이 있습니다.',
+        },
+      },
+      {
+        title: '확장 가능한 프론트엔드 아키텍처 설계',
+        description: '핵심 역량: 아키텍처 설계 및 도입',
+        icon: <Layers className="h-6 w-6 text-purple-500" />,
+        category: 'experience',
+        level: '핵심',
+        experience: {
+          title: '💡 주요 경험',
+          details:
+            '여러 파생 서비스(B2C, B2B, 복지몰)의 UI 공통화 및 코드 관리 효율성을 높이기 위해 직접 Turborepo를 도입하여 모노레포 환경을 성공적으로 구축하고 운영한 경험이 있습니다.',
+        },
+      },
+      {
+        title: '웹 성능 최적화',
+        description: '핵심 역량: 사용자 경험 개선',
+        icon: <BarChart3 className="h-6 w-6 text-orange-500" />,
+        category: 'experience',
+        level: '핵심',
+        experience: {
+          title: '💡 주요 경험',
+          details:
+            'React Query의 stale-while-revalidate 캐싱 전략과 디바운싱으로 API 호출을 제어했으며, CDN 및 폰트 경량화를 통해 서비스 초기 로딩 속도를 개선하는 등 다양한 성능 최적화 경험을 보유하고 있습니다.',
+        },
+      },
+      {
+        title: 'AWS 기반 배포 및 인프라 운영',
+        description: '핵심 역량: 클라우드 인프라 활용',
+        icon: <Cloud className="h-6 w-6 text-cyan-500" />,
+        category: 'experience',
+        level: '핵심',
+        experience: {
+          title: '💡 주요 경험',
+          details:
+            'AWS EC2, S3, CloudFront를 활용하여 프론트엔드 애플리케이션을 배포하고 운영한 경험이 있습니다. Nginx 웹 서버 설정 및 PM2를 이용한 프로세스 관리에 익숙합니다.',
+        },
+      },
+      {
+        title: '팀 리딩 및 개발 문화 구축',
+        description: '핵심 역량: 리더십 및 프로세스 개선',
+        icon: <Users className="h-6 w-6 text-green-500" />,
+        category: 'experience',
+        level: '핵심',
+        experience: {
+          title: '💡 주요 경험',
+          details:
+            '8년간 사원에서 5명 규모의 프론트엔드 팀장으로 성장했습니다. Git-Flow 도입, Husky를 활용한 코드 품질 관리, AWS CodeCommit 기반의 코드 리뷰 문화를 주도적으로 정착시켜 팀의 개발 생산성과 안정성을 높였습니다.',
         },
       },
     ],
