@@ -95,7 +95,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '팀장으로서 AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 활성화했습니다. 또한, 사소한 이슈라도 함께 논의하며 팀의 코드 컨벤션을 만들어가는 등 동료와 함께 성장하는 개발 문화를 만드는 데 기여했습니다.',
+            '파트장 으로서 AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 활성화했습니다. 또한, 사소한 이슈라도 함께 논의하며 팀의 코드 컨벤션을 만들어가는 등 동료와 함께 성장하는 개발 문화를 만드는 데 기여했습니다.',
         },
       },
       {
@@ -257,7 +257,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '팀장으로서 Git-Flow 도입, AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 활성화했습니다. 이를 통해 팀원들과 함께 논의하며 더 나은 코드를 만들어가는 협업 문화를 구축했습니다.',
+            '파트장으로서 Git-Flow 도입, AWS CodeCommit 기반의 PR 문화와 2인 승인 체계를 정착시켜 코드 리뷰를 활성화했습니다. 이를 통해 팀원들과 함께 논의하며 더 나은 코드를 만들어가는 협업 문화를 구축했습니다.',
         },
       },
       {
@@ -332,7 +332,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 3년 이상의 경력을 훨씬 상회하는 풍부한 실무 경험입니다.',
+            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 파트장까지 성장했습니다. 이는 자격요건인 3년 이상의 경력을 훨씬 상회하는 풍부한 실무 경험입니다.',
         },
       },
       {
@@ -445,7 +445,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 나의 경험',
           details:
-            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 팀장까지 성장했습니다. 이는 자격요건인 5년 이상의 경력을 충분히 만족하는 풍부한 실무 경험입니다.',
+            '주식회사 지니웍스에서 8년간 프론트엔드 개발자로 근무하며 사원에서 파트장까지 성장했습니다. 이는 자격요건인 5년 이상의 경력을 충분히 만족하는 풍부한 실무 경험입니다.',
         },
       },
       {
@@ -615,7 +615,7 @@ export const companyQualifications: CompanyQualifications[] = [
         experience: {
           title: '💡 주요 경험',
           details:
-            '8년간 사원에서 5명 규모의 프론트엔드 팀장으로 성장했습니다. Git-Flow 도입, Husky를 활용한 코드 품질 관리, AWS CodeCommit 기반의 코드 리뷰 문화를 주도적으로 정착시켜 팀의 개발 생산성과 안정성을 높였습니다.',
+            '8년간 사원에서 5명 규모의 프론트엔드 파트장으로 성장했습니다. Git-Flow 도입, Husky를 활용한 코드 품질 관리, AWS CodeCommit 기반의 코드 리뷰 문화를 주도적으로 정착시켜 팀의 개발 생산성과 안정성을 높였습니다.',
         },
       },
     ],

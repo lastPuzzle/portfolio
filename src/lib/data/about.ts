@@ -7,7 +7,7 @@ export interface AboutSection {
 export const aboutSections: AboutSection[] = [
   {
     id: 'introduction',
-    title: '8년간 한 우물을 파며, 사원에서 팀장까지 성장했습니다.',
+    title: '8년간 한 우물을 파며, 사원에서 파트장까지 성장했습니다.',
     content:
       '안녕하세요, 커머스와 마케팅 플랫폼이라는 두 분야에 깊이 몰입하며 비즈니스와 함께 성장해 온 프론트엔드 개발자 이승혁입니다.',
   },
